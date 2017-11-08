@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <title>Jenny Wong's take on Christmas!</title>
+  </head>
+
+  <body onload="setup()">
+    <audio id="song" controls autoplay>
+      <source src = "song.mp3" type="audio/ogg">
+      <source>
+    </audio>
+    <div class="winter-is-coming">
+      <div class="snow snow--near"></div>
+      <div class="snow snow--near snow--alt"></div>
+
+      <div class="snow snow--mid"></div>
+      <div class="snow snow--mid snow--alt"></div>
+
+      <div class="snow snow--far"></div>
+      <div class="snow snow--far snow--alt"></div>
+
+
+    </div>
+
+    <img onclick="mute_volume()" src = "volume.png" id="volume">
+    </img>
+    <center>
+      <a onclick = "scroll_up_enter()">
+        <div id="enter_button" class="hover_div">
+          I'm a Jenny!
+        </div>
+      </a>
+    </center>
+
+    <div id="name_title" class="name_class"> My name is...
+    </div>
+
+    <select name="cars" id="name" class="name_class">
+
+    </select>
+
+    <div onclick="confirm_name()" id="confirm_name" class="hover_div name_class">
+      Confirm
+    </div>
+
+    <div onclick="find_out()" id="find_secret_santa" class="hover_div">
+      Find out my Secret Santa!
+    </div>
+
+    <div id="end_page">
+      <p id="end_page_title">
+        Your Secret Santa:
+      </p>
+      <p id = "end_page_info" class="end_page_info">
+        Location: 9095 Sydney Ct, San Diego, CA 92122
+        <br></br>
+        Date: December 8th, 2017
+        <br></br>
+        Time: 6:00 PM
+        <br></br>
+        Rules: Bring (a) gift(s) for your Secret Santa! Aim to spend around $15 for your person's gift. Feel free to uses
+        the list as a reference or get him/her something else completely that you think they
+        may like. Wrap it and put your person's name on it, but don't write your own name. We'll be guessing gift givers. Also, don't
+        gift cash. That's tacky and thoughtless ;)
+
+        P.S. Bring a dish for the potluck! 
+      </p>
+    </div>
+
+    <div id="sorry">
+      Maybe next time, lads... Merry Christmas!
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAGfqMKijzL1jKu0oxyF0Lqd7-jm5vyXAY",
+      authDomain: "secret-santa-2c72a.firebaseapp.com",
+      databaseURL: "https://secret-santa-2c72a.firebaseio.com",
+      projectId: "secret-santa-2c72a",
+      storageBucket: "",
+      messagingSenderId: "622545313115"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+
+</html>
