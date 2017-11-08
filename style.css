@@ -263,3 +263,14 @@ textarea:focus, input:focus, select:focus{
   text-align: center;
   border-radius: 5px;
 }
+
+#version
+{
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Mountains of Christmas', cursive;
+  position: fixed;
+  color: white;
+  z-index: 5;
+  margin-left: 90%;
+}

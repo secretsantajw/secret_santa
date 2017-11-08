@@ -1,8 +1,6 @@
 var curr_user;
 var curr_user_num;
 
-
-
 function setup()
 {
   var music = document.getElementById("song");
@@ -18,17 +16,14 @@ function setup()
   userRef.once("value").then(
     function(snapshot) {
       var users = snapshot.val();
-
-      for(var i = 0; i < users.length; i++)
+      for(var i = 0; i < 7; i++)
       {
         if (users[i] != undefined)
         {
           var name = document.getElementById("name");
           var opt = document.createElement("option");
           opt.value= users[i];
-          opt.innerHTML = users[i]; // whatever property it has
-
-          // then append it to the select element
+          opt.innerHTML = users[i];
           name.appendChild(opt);
         }
       }
@@ -120,34 +115,30 @@ function find_out()
       var secret_santa = available_users[num];
       end_page_title.innerHTML = "Your Secret Santa is: " + secret_santa;
 
-
       var list = document.createElement("P");
       list.className += " end_page_info";
       switch(secret_santa)
       {
         case 'Alex Pu':
-          list.innerHTML = "This lad has asked for: 1). A nice long sleeve shirt for casual wear (maybe Henley). Wears a medium. Keep the receipt in case he buffs up before December 8th and needs a different size. 2). Sunglasses (maybe Aviators). Wears a large cause he has a large head. 3). Casual non-tennis pair of shoes. Wears a size 10 (maybe Vans or Converse)";
+          list.innerHTML = "This lad has asked for: 1). A nice long sleeve shirt for casual wear (maybe Henley). Wears a medium. Keep the receipt in case he buffs up before December 8th and needs a different size. 2). Sunglasses (maybe Aviators). Wears a large cause he has a large head. 3). A nice umbrella";
           break;
         case 'Anu Ganzorig':
           list.innerHTML = "This gal desires: 1). BIG stuffed animal (any). 2). BIG mug (sensing a pattern here). 3). A plant";
           break;
         case 'Eric Lin':
-          list.innerHTML = "1). Nice V-Neck T-Shirt (Large). Keep the receipt in case 2). A nice sweatshirt (black/blue/grey) (Large). Keep the receipt in case. 3). Casual non-tennis pair of shoes. Wears a size 12.5/13 (maybe Vans or Converse)";
+          list.innerHTML = "1). Nice V-Neck T-Shirt (Large). Keep the receipt in case 2). A nice sweatshirt (black/blue/grey) (Large). Keep the receipt in case. 3). Riot Points Gift Card (League of Legends game)";
           break;
         case 'Jenny Wong':
           list.innerHTML = "This lassie doth requested: 1). A luxury pillow. 2). A cowboy hat (Yee-haw cowboy). 3). Cute socks";
           break;
         case 'Karen Lo':
           list.innerHTML = "This chiquita wants 1). Food (Guessing not potluck food). 2). Spares of Panasonic earphones she has right now. 3). Steam credit (Steam is a game platform)";
-
           break;
         default: break;
       }
       var end_page = document.getElementById("end_page");
       var end_page_info = document.getElementById("end_page_info");
       end_page.insertBefore(list, end_page_info);
-
-
     }
   );
 }
